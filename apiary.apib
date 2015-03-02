@@ -85,3 +85,23 @@ Get detail of a product
     + Body
 
             { "id": 3, "name": "Lumia 720", "price": 350 }
+            
+# Group Users
+API for **User**
+
+## User [/user/{token}]
+Get detail of a user
+
++ Parameters
+    + token (required, string, `abcdefghj`) ... Facebook Token
+
+### Retrieve detail of a User [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-Application: ZGVtb2RlbW9kZW1v
+
+    + Body
+
+            { "id": 9, "name": "HuyNQ", "token": abcdefghj }
