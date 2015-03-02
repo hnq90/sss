@@ -1,0 +1,87 @@
+FORMAT: 1A
+
+# SSS Application
+API Mockup for SSS application
+
+# Group Categories
+API for **Category**
+
+## Categories Collection [/categories]
+### List all Categories [GET]
++ Response 200 (application/json)
+
+    + Header
+    
+            X-Application: ZGVtb2RlbW9kZW1v
+            
+    + Body
+    
+            [{
+              "id": 1, "name": "Nokia"
+            }, 
+            {
+              "id": 2, "name": "Apple"
+            }]
+
+## Category [/category/{id}]
+Get detail of a category
+
++ Parameters
+    + id (required, number, `1`) ... Id of a category
+
+### Retrieve detail of a Category [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-Application: ZGVtb2RlbW9kZW1v
+
+    + Body
+
+            { "id": 1, "name": "Nokia" }
+            
+# Group Products
+API for **Product**
+
+## Products Collection [/products]
+### List all Products [GET]
++ Response 200 (application/json)
+
+    + Header
+    
+            X-Application: ZGVtb2RlbW9kZW1v
+            
+    + Body
+    
+            [{
+              "id": 1, "name": "Lumia 520", "price": 250
+            }, 
+            {
+              "id": 2, "name": "Lumia 620", "price": 300
+            },
+            {
+              "id": 3, "name": "Lumia 720", "price": 350
+            },
+            {
+              "id": 4, "name": "Lumia 820", "price": 400
+            },
+            {
+              "id": 5, "name": "Lumia 920", "price": 450
+            }]
+
+## Product [/product/{id}]
+Get detail of a product
+
++ Parameters
+    + id (required, number, `1`) ... Id of a product
+
+### Retrieve detail of a Product [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-Application: ZGVtb2RlbW9kZW1v
+
+    + Body
+
+            { "id": 3, "name": "Lumia 720", "price": 350 }
