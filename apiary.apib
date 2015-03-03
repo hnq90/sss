@@ -16,12 +16,17 @@ API for **Category**
             
     + Body
     
-            [{
-              "id": 1, "name": "Nokia"
-            }, 
             {
-              "id": 2, "name": "Apple"
-            }]
+            "code": 0,
+            "data": [
+                    {
+                      "id": 1, "name": "Nokia"
+                    }, 
+                    {
+                      "id": 2, "name": "Apple"
+                    }
+                ]
+            }
 
 ## Category [/category/{id}]
 Get detail of a category
@@ -37,8 +42,14 @@ Get detail of a category
             X-Application: ZGVtb2RlbW9kZW1v
 
     + Body
-
-            { "id": 1, "name": "Nokia" }
+    
+            {
+                "code": 0,
+                "data": { 
+                    "id": 1, 
+                    "name": "Nokia"
+                }
+            }
             
 # Group Products
 API for **Product**
@@ -53,21 +64,26 @@ API for **Product**
             
     + Body
     
-            [{
-              "id": 1, "name": "Lumia 520", "price": 250
-            }, 
             {
-              "id": 2, "name": "Lumia 620", "price": 300
-            },
-            {
-              "id": 3, "name": "Lumia 720", "price": 350
-            },
-            {
-              "id": 4, "name": "Lumia 820", "price": 400
-            },
-            {
-              "id": 5, "name": "Lumia 920", "price": 450
-            }]
+                "code": 0,
+                "data": [
+                    {
+                      "id": 1, "name": "Lumia 520", "price": 250, "thumb": "http:\/\/placekitten.com\/200\/300"
+                    }, 
+                    {
+                      "id": 2, "name": "Lumia 620", "price": 300, "thumb": "http:\/\/placekitten.com\/250\/300"
+                    },
+                    {
+                      "id": 3, "name": "Lumia 720", "price": 350, "thumb": "http:\/\/placekitten.com\/300\/300"
+                    },
+                    {
+                      "id": 4, "name": "Lumia 820", "price": 400, "thumb": "http:\/\/placekitten.com\/350\/300"
+                    },
+                    {
+                      "id": 5, "name": "Lumia 920", "price": 450, "thumb": "http:\/\/placekitten.com\/400\/300"
+                    }
+                ]
+            }
 
 ## Product [/product/{id}]
 Get detail of a product
@@ -83,17 +99,27 @@ Get detail of a product
             X-Application: ZGVtb2RlbW9kZW1v
 
     + Body
-
-            { "id": 3, "name": "Lumia 720", "price": 350 }
+            
+            {
+                "code": 0,
+                "data": {
+                    "id": 3, 
+                    "name": "Lumia 720", 
+                    "price": 350,
+                    "thumb": "http:\/\/placekitten.com\/300\/300",
+                    "orignal": "http:\/\/placekitten.com\/700\/700"
+                }
+            }
             
 # Group Users
 API for **User**
 
-## User [/user/{token}]
+## User [/user/{uid}/{token}]
 Get detail of a user
 
 + Parameters
     + token (required, string, `abcdefghj`) ... Facebook Token
+    + uid (required, string, `hnq90`) ... Facebook User Id
 
 ### Retrieve detail of a User [GET]
 + Response 200 (application/json)
@@ -103,5 +129,14 @@ Get detail of a user
             X-Application: ZGVtb2RlbW9kZW1v
 
     + Body
-
-            { "id": 9, "name": "HuyNQ", "token": abcdefghj }
+    
+            {
+                "code": 0,
+                "data": {
+                    "id": 9, 
+                    "name": "HuyNQ",
+                    "type": 1,
+                    "token": "abcdefghj",
+                    "uid": "hnq90"
+                }
+            }
